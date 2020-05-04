@@ -91,7 +91,7 @@ testresources==2.0.1
 toml==0.10.0
 torequests==5.0.2
 uniparser==1.4.4
-urllib3==1.22
+urllib3==1.24.2
 uvicorn==0.11.5
 uvloop==0.14.0
 virtualenv==20.0.18
