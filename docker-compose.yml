@@ -7,19 +7,21 @@ services:
     volumes:
       - .:/usr/src/app
     ports:
-      - "5000:5000"
+      - "32500:5000"
+      - "32501:8000"
+      - "32502:9000"
     depends_on:
       - postgrees_database
 
-  postgrees_database:
-    image: postgres
-    container_name: 'database_bot'
-    restart: always
-    ports:
-      - "5432:5432"
+        #  postgrees_database:
+        #    image: postgres
+        #    container_name: 'database_bot'
+        #    restart: always
+        #    ports:
+        #      - "5432:5432"
 
-    environment:
-      POSTGRES_PASSWORD: user_password
-      POSTGRES_DB: database
-      POSTGRES_USER: user
+        #    environment:
+        #      POSTGRES_PASSWORD: user_password
+        #      POSTGRES_DB: database
+        #      POSTGRES_USER: user
 
