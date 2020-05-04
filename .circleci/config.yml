@@ -1,16 +1,15 @@
-name: Docker Image CI
-  
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+version: 2.0
 jobs:
   build:
-    runs-on: ubuntu-latest
+    docker:
+      - image: ../.
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker-compose up -d --build
+      - checkout
+      - run:
+          name: "Docker_python"
+          command: |
+            docker-compose up -d --build
+      - run:
+          name: Check current version of node
+          command: node -v
 
