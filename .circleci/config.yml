@@ -1,15 +1,21 @@
-version: 2.0
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
 jobs:
-  build:
-    docker:
-      - image: ../.
+  build-and-test:
+    executor: python/default
     steps:
       - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
       - run:
-          name: "Docker_python"
-          command: |
-            docker-compose up -d --build
-      - run:
-          name: Check current version of node
-          command: node -v
+          command: gunicorn -w 4 app:app
+          name: Build
 
+workflows:
+  main:
+    jobs:
+      - build-and-test
