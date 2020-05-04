@@ -1,4 +1,5 @@
 #!/bin/bash
 pip install -r requirements.txt
-python database.py
+pip install psycopg2
+#python database.py
 
