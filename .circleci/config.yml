@@ -1,15 +1,8 @@
-version: 2.0
-jobs:
-  build:
-    docker:
-      - image: ../.
-    steps:
-      - checkout
-      - run:
-          name: "Docker_python"
-          command: |
-            docker-compose up -d --build
-      - run:
-          name: Check current version of node
-          command: node -v
+version: 2.1
+orbs:
+  heroku: circleci/heroku@0.0.10
+workflows:
+  heroku_deploy:
+    jobs:
+      - heroku/deploy-via-git
 
