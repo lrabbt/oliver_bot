@@ -16,7 +16,7 @@ services:
     container_name: 'database_bot'
     restart: always
     ports:
-      - "32501:5432"
+      - "5432:5432"
 
     environment:
       POSTGRES_PASSWORD: user_password
