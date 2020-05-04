@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  bot:
+    build: .
+    container_name: 'oliver_bot'
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgrees_database
+
+  postgrees_database:
+    image: postgres
+    container_name: 'database_bot'
+    restart: always
+    ports:
+      - "32501:5432"
+
+    environment:
+      POSTGRES_PASSWORD: user_password
+      POSTGRES_DB: database
+      POSTGRES_USER: user
+
