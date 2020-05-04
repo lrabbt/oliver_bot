@@ -4,17 +4,11 @@ ENV FLASK_APP=app.py
 
 WORKDIR /usr/src/app
 
+COPY requirements.txt .
+
 RUN pip install --upgrade pip
 
-RUN pip install Flask
-
-RUN pip install mysqlclient
-
-RUN pip install sqlalchemy
-
-RUN pip install gunicorn
-
-RUN pip install psycopg2
+RUN pip install -r requirements.txt
 
 COPY . .
 

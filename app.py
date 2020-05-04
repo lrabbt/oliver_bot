@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import json
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -16,3 +17,6 @@ def receive_notifications():
 def hello():
     return 'Hello, World'
 
+if __name__ == "__main__":
+   #app.run() ##Replaced with below code to run it using waitress
+   serve(app, host='0.0.0.0', port=8000)

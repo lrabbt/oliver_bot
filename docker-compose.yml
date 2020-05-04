@@ -7,6 +7,5 @@ services:
     volumes:
       - .:/usr/src/app
     ports:
-      - "32500:5000"
-      - "32501:8000"
+      - "32500:8000"
 
