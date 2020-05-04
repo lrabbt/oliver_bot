@@ -6,6 +6,8 @@ WORKDIR /usr/src/app
 
 RUN pip install --upgrade pip
 
+RUN pip install gunicorn
+
 RUN pip install Flask
 
 RUN pip install mysqlclient
