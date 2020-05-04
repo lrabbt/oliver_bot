@@ -1,6 +1,6 @@
 from python:3.7
 
-ENV FLASK_APP=app.py
+ENV FLASK_APP=flaskr
 
 WORKDIR /usr/src/app
 
