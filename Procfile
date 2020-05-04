@@ -1,1 +1,1 @@
-web: flask run 
+web: sh run.sh
