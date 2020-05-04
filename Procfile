@@ -1,2 +1,3 @@
-web: pip install -r requirements.txt && gunicorn -w 4 app:app
+release: ./run.sh
+web: gunicorn -w 4 app:app
 
