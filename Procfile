@@ -1,3 +1,3 @@
 release: sh run.sh
-web: gunicorn -w 4 app:app
+web: waitress-serve --call 'flaskr:oliver_bot'
 

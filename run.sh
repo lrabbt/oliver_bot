@@ -1,5 +1,6 @@
 #!/bin/bash
 pip install -r requirements.txt
 #python database.py
-python app.py
+
+waitress-serve --call 'flaskr:oliver_bot'
 
